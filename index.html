@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Curricular Tercero Básico — Colegio Montano Cortijo</title>
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tipografía Institucional Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy-dark: #091d54;
+      --navy-primary: #0d2b6b;
+      --navy-mid: #133884;
+      --gold-primary: #facc15;
+      --gold-hover: #eab308;
+      --bg-canvas: #F4F6FA;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-canvas);
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Botones de pestañas estilo 3D institucional */
+    .tab-btn {
+      transition: all 0.18s ease;
+      box-shadow: 0 3px 0 rgba(9, 29, 84, 0.35);
+    }
+    .tab-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 rgba(9, 29, 84, 0.35);
+    }
+    .tab-btn-active {
+      background-color: #facc15;
+      color: #0d2b6b;
+      box-shadow: 0 3px 0 #b48a06;
+    }
+    .tab-btn-inactive {
+      background-color: #133884;
+      color: #FFFFFF;
+    }
+    .tab-btn-inactive:hover {
+      background-color: #1a47a3;
+    }
+
+    /* Resaltado de búsqueda en tiempo real */
+    mark.search-highlight {
+      background-color: #FEF08A;
+      color: #0d2b6b;
+      padding: 0 3px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+
+    /* Animaciones suaves */
+    .fade-in {
+      animation: fadeIn 0.25s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Estilos limpios para impresión */
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-header {
+        background-color: #0d2b6b !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .curriculum-card {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        border-left: 6px solid #0d2b6b !important;
+        break-inside: avoid;
+        margin-bottom: 24px !important;
+      }
+      table thead {
+        background-color: #0d2b6b !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      tr {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- ENCABEZADO INSTITUCIONAL SUPERIOR -->
+  <header class="print-header bg-gradient-to-r from-[#091d54] via-[#0d2b6b] to-[#133884] text-white shadow-md border-b-4 border-[#facc15]">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 py-3.5 flex flex-col lg:flex-row items-center justify-between gap-3.5">
+
+      <!-- Izquierda: Escudo Oficial CM Cortijo + Título -->
+      <div class="flex items-center gap-3.5 w-full lg:w-auto justify-center lg:justify-start">
+        <div class="w-16 h-16 flex-shrink-0 bg-white rounded-xl p-1 shadow-sm flex items-center justify-center border border-blue-200/80 overflow-hidden">
+          <!-- Carga image_5a3a4c.png si está disponible localmente; por defecto muestra el SVG vectorial fiel -->
+          <img
+            src="image_5a3a4c.png"
+            alt="Logo Colegio Montano Cortijo"
+            class="w-full h-full object-contain hidden"
+            onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');"
+            onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
+          />
+          <svg viewBox="0 0 180 185" class="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-label="Escudo Colegio Montano Cortijo">
+            <defs>
+              <linearGradient id="shieldGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFE600" />
+                <stop offset="55%" stop-color="#FACC15" />
+                <stop offset="100%" stop-color="#EAB308" />
+              </linearGradient>
+              <linearGradient id="shieldBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0055A5" />
+                <stop offset="50%" stop-color="#0077C8" />
+                <stop offset="100%" stop-color="#004488" />
+              </linearGradient>
+              <linearGradient id="ribbonBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#003366" />
+                <stop offset="50%" stop-color="#0066B2" />
+                <stop offset="100%" stop-color="#002B5C" />
+              </linearGradient>
+              <path id="ribbonTextPath" d="M 24,113 Q 90,130 156,113" fill="none" />
+            </defs>
+
+            <!-- Contorno exterior azul del escudo -->
+            <path d="M 90,8 Q 124,20 154,18 L 154,84 C 154,124 123,144 90,156 C 57,144 26,124 26,84 L 26,18 Q 56,20 90,8 Z"
+                  fill="url(#shieldBlueGrad)" />
+            <!-- Marco blanco interior -->
+            <path d="M 90,13 Q 121,24 148,22 L 148,83 C 148,119 120,138 90,149 C 60,138 32,119 32,83 L 32,22 Q 59,24 90,13 Z"
+                  fill="#FFFFFF" />
+            <!-- Fondo dorado interior -->
+            <path d="M 90,19 Q 118,29 142,27 L 142,82 C 142,114 117,131 90,142 C 63,131 38,114 38,82 L 38,27 Q 62,29 90,19 Z"
+                  fill="url(#shieldGoldGrad)" stroke="#D97706" stroke-width="1" />
+
+            <!-- Letras CM institucionales -->
+            <g font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="52" text-anchor="middle">
+              <text x="68" y="88" fill="#0055A5" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" transform="rotate(-5 68 72)">C</text>
+              <text x="111" y="88" fill="#0055A5" stroke="#FFFFFF" stroke-width="4" paint-order="stroke" transform="rotate(4 111 72)">M</text>
+            </g>
+
+            <!-- Listón curvo inferior -->
+            <path d="M 16,100 Q 90,120 164,100 L 160,118 Q 90,138 20,118 Z"
+                  fill="url(#ribbonBlueGrad)" stroke="#FFFFFF" stroke-width="1" />
+            <text font-family="Arial Narrow, Inter, sans-serif" font-weight="800" font-size="6.6" fill="#FFFFFF" letter-spacing="0.35">
+              <textPath href="#ribbonTextPath" startOffset="50%" text-anchor="middle">
+                EXCELENCIA HUMANA, ACADÉMICA Y FÍSICA
+              </textPath>
+            </text>
+
+            <!-- 5 Estrellas azules -->
+            <g fill="#0055A5" transform="translate(0, 1)">
+              <polygon points="50,158 51.8,162.5 56.5,162.8 52.8,165.8 54,170.3 50,167.7 46,170.3 47.2,165.8 43.5,162.8 48.2,162.5" />
+              <polygon points="70,158 71.8,162.5 76.5,162.8 72.8,165.8 74,170.3 70,167.7 66,170.3 67.2,165.8 63.5,162.8 68.2,162.5" />
+              <polygon points="90,158 91.8,162.5 96.5,162.8 92.8,165.8 94,170.3 90,167.7 86,170.3 87.2,165.8 83.5,162.8 88.2,162.5" />
+              <polygon points="110,158 111.8,162.5 116.5,162.8 112.8,165.8 114,170.3 110,167.7 106,170.3 107.2,165.8 103.5,162.8 108.2,162.5" />
+              <polygon points="130,158 131.8,162.5 136.5,162.8 132.8,165.8 134,170.3 130,167.7 126,170.3 127.2,165.8 123.5,162.8 128.2,162.5" />
+            </g>
+
+            <!-- Texto CORTIJO -->
+            <text x="90" y="182" text-anchor="middle" font-family="Arial Black, Inter, sans-serif" font-weight="900" font-size="13.5" fill="#0055A5" letter-spacing="1.5">
+              CORTIJO
+            </text>
+          </svg>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <h1 class="text-lg sm:text-xl md:text-[22px] font-black tracking-wide leading-tight text-white uppercase">
+            COLEGIO MONTANO CORTIJO
+          </h1>
+          <p class="text-xs sm:text-sm font-bold italic text-[#facc15] tracking-wide mt-0.5">
+            Malla Curricular — Expresión Artística (Danza y Teatro)
+          </p>
+        </div>
+      </div>
+
+      <!-- Centro: Caja oscura translúcida con metadatos -->
+      <div class="bg-[#06143d]/85 border border-blue-400/25 rounded-xl px-4 py-2 text-xs sm:text-[13px] shadow-inner w-full lg:w-auto">
+        <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <span>
+            <strong class="italic text-[#facc15] font-bold">Documento:</strong>
+            <span class="text-white font-medium ml-1">Malla Curricular</span>
+          </span>
+          <span class="text-blue-400/50 hidden sm:inline">|</span>
+          <span>
+            <strong class="italic text-[#facc15] font-bold">Nivel:</strong>
+            <span class="text-white font-medium ml-1">Tercero Básico</span>
+          </span>
+          <span class="text-blue-400/50 hidden sm:inline">|</span>
+          <span>
+            <strong class="italic text-[#facc15] font-bold">Maestra:</strong>
+            <span class="text-white font-medium ml-1">Rebeca Sian</span>
+          </span>
+        </div>
+        <div class="text-center mt-1 pt-0.5 border-t border-blue-400/15">
+          <strong class="italic text-[#facc15] font-bold">Ciclo Escolar:</strong>
+          <span class="text-white font-semibold ml-1">2027</span>
+        </div>
+      </div>
+
+      <!-- Derecha: Botón Pantalla Completa con borde dorado -->
+      <div class="no-print flex items-center gap-2 w-full lg:w-auto justify-center lg:justify-end">
+        <button
+          id="fullscreenBtn"
+          onclick="toggleFullScreen()"
+          class="bg-[#facc15] hover:bg-[#eab308] text-[#0d2b6b] border-2 border-[#fef08a] font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow-md flex items-center gap-2 transition-all active:scale-95 cursor-pointer"
+          title="Alternar modo pantalla completa para pizarra"
+        >
+          <svg id="fsIcon" class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span id="fsText">Pantalla Completa</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- BARRA DE NAVEGACIÓN, BUSCADOR Y FILTROS -->
+  <nav class="no-print bg-[#E9EEF6] border-b border-slate-200/90 sticky top-0 z-30 shadow-xs">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 py-3 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+      
+      <!-- Pestañas Principales -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <button
+          id="tab-danza"
+          onclick="switchTab('danza')"
+          class="tab-btn tab-btn-active px-4 py-2.5 rounded-lg font-extrabold italic text-xs sm:text-[13px] tracking-wide uppercase cursor-pointer"
+        >
+          MALLA DE DANZA
+        </button>
+        <button
+          id="tab-teatro"
+          onclick="switchTab('teatro')"
+          class="tab-btn tab-btn-inactive px-4 py-2.5 rounded-lg font-extrabold italic text-xs sm:text-[13px] tracking-wide uppercase cursor-pointer"
+        >
+          MALLA DE TEATRO
+        </button>
+        <button
+          id="tab-completa"
+          onclick="switchTab('completa')"
+          class="tab-btn tab-btn-inactive px-4 py-2.5 rounded-lg font-extrabold italic text-xs sm:text-[13px] tracking-wide uppercase cursor-pointer flex items-center gap-1.5"
+        >
+          <span>MALLA COMPLETA / IMPRIMIR</span>
+        </button>
+      </div>
+
+      <!-- Controles de Búsqueda, Dropdown e Impresión -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+        <!-- Buscador en tiempo real -->
+        <div class="relative flex-1 sm:w-64 md:w-72">
+          <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input
+            type="text"
+            id="searchInput"
+            oninput="handleSearch(this.value)"
+            placeholder="Buscar código, competencia o tema..."
+            class="w-full bg-white text-slate-800 placeholder-slate-400 text-xs sm:text-sm pl-9 pr-8 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#133884] focus:border-[#133884] shadow-2xs"
+          />
+          <button
+            id="clearSearchBtn"
+            onclick="clearSearch()"
+            class="hidden absolute inset-y-0 right-0 pr-2.5 flex items-center text-slate-400 hover:text-slate-700 cursor-pointer"
+            title="Limpiar búsqueda"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Selector Desplegable (Dropdown) -->
+        <div class="relative sm:w-64">
+          <select
+            id="competencySelect"
+            onchange="handleDropdownChange(this.value)"
+            class="w-full appearance-none bg-white text-[#0d2b6b] font-semibold text-xs sm:text-sm pl-3.5 pr-9 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#133884] cursor-pointer shadow-2xs"
+          >
+            <!-- Se llena dinámicamente -->
+          </select>
+          <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-[#0d2b6b]">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </div>
+
+        <!-- Botón de acción imprimir directo visible en Malla Completa -->
+        <button
+          id="directPrintBtn"
+          onclick="window.print()"
+          class="hidden bg-[#0d2b6b] hover:bg-[#133884] text-[#facc15] font-bold text-xs sm:text-sm px-3.5 py-2 rounded-lg shadow-xs items-center justify-center gap-1.5 transition cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Imprimir</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL DE LA PIZARRA -->
+  <main id="mainContainer" class="flex-1 max-w-[1440px] w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+    <!-- Renderizado dinámico mediante JavaScript -->
+  </main>
+
+  <!-- MODAL DE PRESENTACIÓN / MODO PIZARRA PARA PROYECCIÓN -->
+  <div id="detailModal" class="no-print fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/65 backdrop-blur-xs p-4" onclick="closeModal(event)">
+    <div class="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border-l-8 border-[#0d2b6b] overflow-hidden fade-in" onclick="event.stopPropagation()">
+      <div class="bg-[#0d2b6b] px-6 py-4 flex items-center justify-between text-white">
+        <div class="flex items-center gap-2.5">
+          <span id="modalAreaBadge" class="bg-[#facc15] text-[#0d2b6b] text-xs font-black uppercase px-2.5 py-1 rounded-md">ÁREA</span>
+          <span id="modalCompBadge" class="text-xs font-bold text-blue-100 uppercase tracking-wider">BLOQUE DE COMPETENCIA 1</span>
+          <span id="modalStepBadge" class="text-[11px] font-semibold text-[#facc15] bg-white/10 px-2 py-0.5 rounded">1 / 1</span>
+        </div>
+        <button onclick="hideModal()" class="text-white/80 hover:text-[#facc15] transition cursor-pointer" title="Cerrar modal">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400">Modo Pizarra / Proyección — Contenido Jerárquico</span>
+          <p id="modalContentText" class="text-lg sm:text-2xl font-bold text-[#0d2b6b] mt-1.5 leading-snug"></p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="bg-[#F4F6FA] rounded-xl p-3.5 border border-slate-200">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#133884]">Competencia Asociada</span>
+            <p id="modalCompetencyText" class="text-xs sm:text-sm font-semibold text-slate-700 mt-1 leading-relaxed"></p>
+          </div>
+          <div class="bg-[#F4F6FA] rounded-xl p-3.5 border border-slate-200">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#133884]">Indicador de Logro Vinculado</span>
+            <p id="modalIndicatorText" class="text-xs sm:text-sm font-medium text-slate-700 mt-1 leading-relaxed"></p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-100">
+          <button
+            type="button"
+            id="modalProgressBtn"
+            onclick="toggleItemProgressFromModal()"
+            class="inline-flex items-center gap-2 cursor-pointer select-none px-4 py-2 rounded-lg border font-bold text-xs sm:text-sm transition"
+          >
+            <span id="modalProgressIcon" class="w-4 h-4 rounded flex items-center justify-center"></span>
+            <span id="modalProgressLabel">Marcar como visto en clase</span>
+          </button>
+          <div class="flex items-center gap-2">
+            <button
+              id="modalPrevBtn"
+              onclick="navigateModal(-1)"
+              class="bg-slate-100 hover:bg-slate-200 text-[#0d2b6b] font-bold text-xs sm:text-sm px-3.5 py-2.5 rounded-lg transition cursor-pointer disabled:opacity-40 disabled:pointer-events-none"
+              title="Contenido anterior (Flecha Izquierda)"
+            >
+              ← Anterior
+            </button>
+            <button
+              id="modalNextBtn"
+              onclick="navigateModal(1)"
+              class="bg-slate-100 hover:bg-slate-200 text-[#0d2b6b] font-bold text-xs sm:text-sm px-3.5 py-2.5 rounded-lg transition cursor-pointer disabled:opacity-40 disabled:pointer-events-none"
+              title="Siguiente contenido (Flecha Derecha)"
+            >
+              Siguiente →
+            </button>
+            <button onclick="hideModal()" class="bg-[#0d2b6b] hover:bg-[#133884] text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition cursor-pointer">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIE DE PÁGINA Y BARRA DE PROGRESO DOCENTE -->
+  <footer class="no-print max-w-[1440px] w-full mx-auto px-4 sm:px-6 pb-6 pt-2 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+    <div>
+      <span class="font-bold text-[#0d2b6b]">Colegio Montano Cortijo</span> · Pizarra Digital Docente · Tercero Básico
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-2xs">
+        <span id="progressSummary" class="font-bold text-[#133884]">Contenidos vistos en clase: 0 / 53 (0%)</span>
+        <div class="w-24 h-2 bg-slate-200 rounded-full overflow-hidden">
+          <div id="progressBarFill" class="h-full bg-emerald-600 transition-all duration-300" style="width: 0%;"></div>
+        </div>
+      </div>
+      <button onclick="resetProgress()" class="text-slate-500 hover:text-red-600 font-semibold underline cursor-pointer">
+        Reiniciar avance
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    // =========================================================================
+    // DATOS CURRICULARES OFICIALES — TERCERO BÁSICO (MAESTRA REBECA SIAN)
+    // =========================================================================
+    const STORAGE_KEY = 'malla_tercero_basico_progreso_v1';
+
+    const curriculumData = {
+      danza: {
+        id: 'danza',
+        badge: 'MALLA CURRICULAR OFICIAL',
+        title: 'EXPRESIÓN ARTÍSTICA EN EL ÁREA DE DANZA',
+        blocksLabel: '3 Bloques Curriculares',
+        totalCompetencies: 3,
+        rows: [
+          {
+            no: 1,
+            competencia: 'Crea movimientos que representan expresiones, ideas, sentimientos e intereses de su cultura u otras culturas',
+            grupos: [
+              {
+                codigo: '1.1.',
+                indicador: '1.1. Combina movimientos originales para representar a su cultura y otras culturas.',
+                contenidos: [
+                  '1.1.1. La danza como lenguaje creativo representativo de diversas culturas. Aplicación',
+                  '1.1.2. La danza como lenguaje representativo de diversas culturas.',
+                  '1.1.3. Aplicación de la danza como lenguaje creativo y de diversas culturas.'
+                ]
+              },
+              {
+                codigo: '1.2.',
+                indicador: '1.2. Improvisa con movimientos no planificados que representan su cultura y la de otros.',
+                contenidos: [
+                  '1.2.1. Movimientos no planificados.',
+                  '1.2.2. Creatividad en la danza.',
+                  '1.2.3. Improvisación.'
+                ]
+              },
+              {
+                codigo: '1.3.',
+                indicador: '1.3. Ensaya sus proyectos dancísticos con fines de intercambio, coordinación y enriquecimiento artístico.',
+                contenidos: [
+                  '1.3.1. Coreografía y tipos de coreografía.',
+                  '1.3.2. Movimientos, ritmo y expresión corporal.',
+                  '1.3.3. Espacio y estilo.'
+                ]
+              }
+            ]
+          },
+          {
+            no: 2,
+            competencia: 'Evalúa los movimientos de su cuerpo con los movimientos de los demás en trabajos individuales y colectivos promoviendo la crítica constructiva.',
+            grupos: [
+              {
+                codigo: '2.1.',
+                indicador: '2.1. Reconoce actividades relacionadas con la danza en contextos culturales.',
+                contenidos: [
+                  '2.1.1. Selección de la danza según su contexto cultural.',
+                  '2.1.2. Relación entre la danza y los otros lenguajes artísticos.',
+                  '2.1.3. La danza y la relación distintas culturas.'
+                ]
+              },
+              {
+                codigo: '2.2.',
+                indicador: '2.2. Respeta los componentes culturales, etarios e históricos de los grupos sociales que la interpretan.',
+                contenidos: [
+                  '2.2.1. Elección de la música.',
+                  '2.2.2. Simbología del vestuario - escenografía.',
+                  '2.2.3. Sinopsis de la obra dancística.'
+                ]
+              },
+              {
+                codigo: '2.3.',
+                indicador: '2.3. Utiliza el recurso de la crítica constructiva para retroalimentar a sus compañeros.',
+                contenidos: [
+                  '2.3.1. Crítica constructiva en el arte.',
+                  '2.3.2. Fundamentos artísticos para debatir.',
+                  '2.3.3. Retroalimentación positiva.'
+                ]
+              }
+            ]
+          },
+          {
+            no: 3,
+            competencia: 'Critica con fundamento artístico los aspectos relevantes de las danzas de su cultura y otras culturas que practica en clase.',
+            grupos: [
+              {
+                codigo: '3.1.',
+                indicador: '3.1. Investiga las danzas individuales o colectivas que baila en clase.',
+                contenidos: [
+                  '3.1.1. Tipos de danza.',
+                  '3.1.2. Historia de la danza en el mundo.',
+                  '3.1.3. Historia de la danza en Guatemala.'
+                ]
+              },
+              {
+                codigo: '3.2.',
+                indicador: '3.2. Argumenta la danza que realiza según el momento histórico que eligió.',
+                contenidos: [
+                  '3.2.1. Estilos de danza.',
+                  '3.2.2. Línea del tiempo en la danza.',
+                  '3.2.3 La danza y la historia.'
+                ]
+              },
+              {
+                codigo: '3.3.',
+                indicador: '3.3. Evalúa danzas que baila individual o grupalmente.',
+                contenidos: [
+                  '3.3.1. Criterios para evaluar propuestas.',
+                  '3.3.2. Según danzas de salón.',
+                  '3.3.3. Según danzas populares.'
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      teatro: {
+        id: 'teatro',
+        badge: 'MALLA CURRICULAR OFICIAL',
+        title: 'EXPRESIÓN ARTÍSTICA EN EL ÁREA DE TEATRO',
+        blocksLabel: '3 Bloques Curriculares',
+        totalCompetencies: 3,
+        rows: [
+          {
+            no: 1,
+            competencia: 'Produce obras de teatro utilizando los elementos de la dramaturgia.',
+            grupos: [
+              {
+                codigo: '1.1.',
+                indicador: '1.1. Escribe obras con los elementos centrales de la dramaturgia.',
+                contenidos: [
+                  '1.1.1. La acción.',
+                  '1.1.2. El conflicto.',
+                  '1.1.3. El personaje.',
+                  '1.1.4. El cronotipo: tiempo y espacio.',
+                  '1.1.5. Inicio, nudo y desenlace.'
+                ]
+              },
+              {
+                codigo: '1.2.',
+                indicador: '1.2. Crea textos teatrales a partir de sus experiencias de vida.',
+                contenidos: [
+                  '1.2.1 Cuadros.',
+                  '1.2.2. Escenas.',
+                  '1.2.3. Actos.'
+                ]
+              },
+              {
+                codigo: '1.3.',
+                indicador: '1.3. Elabora su propio discurso teatral por medio de diversos ejercicios de dramaturgia.',
+                contenidos: [
+                  '1.3.1. Monólogo o unipersonal.',
+                  '1.3.2. Soliloquio.',
+                  '1.3.3. Diálogo.'
+                ]
+              }
+            ]
+          },
+          {
+            no: 2,
+            competencia: 'Recrea la dirección escénica utilizando para ello textos teatrales propios o ajenos.',
+            grupos: [
+              {
+                codigo: '2.1.',
+                indicador: '2.1. Dirige prácticas de dirección escénica.',
+                contenidos: [
+                  '2.1.1. Proceso para montaje de una obra teatral.',
+                  '2.1.2. Selección de actores.',
+                  '2.1.3. Elementos de producción de una obra teatral.'
+                ]
+              },
+              {
+                codigo: '2.2.',
+                indicador: '2.2. Coordina creaciones colectivas.',
+                contenidos: [
+                  '2.2.1. Dramaturgia colectiva.',
+                  '2.2.2. El método de la creación colectiva o método de Cali.',
+                  '2.2.3. Improvisación grupal de escenas.'
+                ]
+              },
+              {
+                codigo: '2.3.',
+                indicador: '2.3. Utiliza su voz correctamente en la experimentación e interpretación de textos.',
+                contenidos: [
+                  '2.3.1. Interpretación del texto.',
+                  '2.3.2. Experimentación del texto.',
+                  '2.3.3. Improvisación dentro del texto.'
+                ]
+              }
+            ]
+          },
+          {
+            no: 3,
+            competencia: 'Analiza y argumenta discursos desde la dramaturgia de diversos autores latinoamericanos.',
+            grupos: [
+              {
+                codigo: '3.1.',
+                indicador: '3.1. Reflexiona sobre las opciones y hechos dramáticos que existen.',
+                contenidos: [
+                  '3.1.1. El café teatro.',
+                  '3.1.2. El teatro del jajaja.',
+                  '3.1.3. El teatro serio.',
+                  '3.1.4. Teatro de denuncia social y político.',
+                  '3.1.5. El teatro musical.',
+                  '3.1.6. Hecho dramático: comedia del arte, teatro del distanciamiento, teatro de la vivencia, entre otros.'
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    };
+
+    // =========================================================================
+    // ESTADO DE LA APLICACIÓN
+    // =========================================================================
+    let activeTab = 'danza'; // 'danza' | 'teatro' | 'completa'
+    let selectedCompDanza = 'all'; // 'all' | '1' | '2' | '3'
+    let selectedCompTeatro = 'all'; // 'all' | '1' | '2' | '3'
+    let selectedCompCompleta = 'all'; // 'all' | '1' | '2' | '3'
+    let searchQuery = '';
+    let completedItems = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    let currentModalItemKey = null;
+    let currentModalSequence = [];
+    let currentModalIndex = -1;
+
+    // =========================================================================
+    // UTILIDADES DE BÚSQUEDA Y RESALTADO
+    // =========================================================================
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function highlightText(text, query) {
+      if (!query || !query.trim()) return text;
+      const safeQuery = escapeRegExp(query.trim());
+      const regex = new RegExp(`(${safeQuery})`, 'gi');
+      return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+    }
+
+    function normalizeStr(str) {
+      return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
+
+    function rowMatchesSearch(row, query) {
+      if (!query || !query.trim()) return true;
+      const q = normalizeStr(query.trim());
+      const inComp = normalizeStr(row.competencia).includes(q);
+      const inGrupos = row.grupos.some(g =>
+        normalizeStr(g.indicador).includes(q) ||
+        g.contenidos.some(cont => normalizeStr(cont).includes(q))
+      );
+      return inComp || inGrupos;
+    }
+
+    function formatHierarchicalItem(text, query) {
+      // Separa el código numérico inicial (ej: "1.1.1." o "3.2.3") del resto del texto
+      const match = text.match(/^(\d+\.\d+\.\d+\.?)\s*(.*)$/);
+      if (!match) {
+        return highlightText(text, query);
+      }
+      const code = highlightText(match[1], query);
+      const body = highlightText(match[2], query);
+      return `<span class="font-extrabold text-[#0d2b6b] mr-1">${code}</span>${body}`;
+    }
+
+    // =========================================================================
+    // PESTAÑAS Y SELECTOR DESPLEGABLE SINCRONIZADO
+    // =========================================================================
+    function updateTabButtons() {
+      const tabs = ['danza', 'teatro', 'completa'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (t === activeTab) {
+          btn.classList.remove('tab-btn-inactive');
+          btn.classList.add('tab-btn-active');
+        } else {
+          btn.classList.remove('tab-btn-active');
+          btn.classList.add('tab-btn-inactive');
+        }
+      });
+
+      const directPrintBtn = document.getElementById('directPrintBtn');
+      if (activeTab === 'completa') {
+        directPrintBtn.classList.remove('hidden');
+        directPrintBtn.classList.add('flex');
+      } else {
+        directPrintBtn.classList.add('hidden');
+        directPrintBtn.classList.remove('flex');
+      }
+    }
+
+    function updateDropdownOptions() {
+      const select = document.getElementById('competencySelect');
+      select.innerHTML = '';
+
+      if (activeTab === 'danza') {
+        select.innerHTML = `
+          <option value="all">Todas las competencias (1–3)</option>
+          <option value="1">Competencia 1 — Creación Cultural</option>
+          <option value="2">Competencia 2 — Crítica Constructiva</option>
+          <option value="3">Competencia 3 — Historia y Evaluación</option>
+        `;
+        select.value = selectedCompDanza;
+      } else if (activeTab === 'teatro') {
+        select.innerHTML = `
+          <option value="all">Todas las competencias (1–3)</option>
+          <option value="1">Competencia 1 — Dramaturgia</option>
+          <option value="2">Competencia 2 — Dirección Escénica</option>
+          <option value="3">Competencia 3 — Dramaturgia Latinoamericana</option>
+        `;
+        select.value = selectedCompTeatro;
+      } else {
+        select.innerHTML = `
+          <option value="all">Todas (6 bloques: 3 Danza + 3 Teatro)</option>
+          <option value="1">Competencia 1 (Danza y Teatro)</option>
+          <option value="2">Competencia 2 (Danza y Teatro)</option>
+          <option value="3">Competencia 3 (Danza y Teatro)</option>
+        `;
+        select.value = selectedCompCompleta;
+      }
+    }
+
+    function switchTab(tab) {
+      activeTab = tab;
+      updateTabButtons();
+      updateDropdownOptions();
+      renderBoard();
+    }
+
+    function handleDropdownChange(val) {
+      if (activeTab === 'danza') selectedCompDanza = val;
+      else if (activeTab === 'teatro') selectedCompTeatro = val;
+      else selectedCompCompleta = val;
+      renderBoard();
+    }
+
+    function setQuickFilter(areaId, compVal) {
+      if (activeTab === 'completa') {
+        selectedCompCompleta = compVal;
+        document.getElementById('competencySelect').value = compVal;
+      } else if (areaId === 'danza') {
+        selectedCompDanza = compVal;
+        document.getElementById('competencySelect').value = compVal;
+      } else if (areaId === 'teatro') {
+        selectedCompTeatro = compVal;
+        document.getElementById('competencySelect').value = compVal;
+      }
+      renderBoard();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (val.trim().length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      renderBoard();
+    }
+
+    function clearSearch() {
+      searchQuery = '';
+      const input = document.getElementById('searchInput');
+      input.value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      renderBoard();
+    }
+
+    // =========================================================================
+    // RENDERIZADO DE LA TARJETA CURRICULAR CON AGRUPACIÓN JERÁRQUICA
+    // =========================================================================
+    function renderAreaCard(areaKey) {
+      const area = curriculumData[areaKey];
+      const currentFilter =
+        activeTab === 'completa'
+          ? selectedCompCompleta
+          : areaKey === 'danza'
+          ? selectedCompDanza
+          : selectedCompTeatro;
+
+      // Filtrar filas por competencia y búsqueda
+      const filteredRows = area.rows.filter(row => {
+        const matchesComp = currentFilter === 'all' || String(row.no) === String(currentFilter);
+        const matchesText = rowMatchesSearch(row, searchQuery);
+        return matchesComp && matchesText;
+      });
+
+      // Píldoras de filtro rápido
+      let quickFilterButtonsHTML = `
+        <button
+          onclick="setQuickFilter('${areaKey}', 'all')"
+          class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition cursor-pointer ${
+            currentFilter === 'all'
+              ? 'bg-[#0d2b6b] text-white shadow-xs'
+              : 'bg-[#EEF2F9] text-[#0d2b6b] hover:bg-blue-100'
+          }"
+        >
+          Todas (${area.totalCompetencies})
+        </button>
+      `;
+
+      for (let i = 1; i <= area.totalCompetencies; i++) {
+        const isActive = String(currentFilter) === String(i);
+        quickFilterButtonsHTML += `
+          <button
+            onclick="setQuickFilter('${areaKey}', '${i}')"
+            class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
+              isActive
+                ? 'bg-[#0d2b6b] text-white shadow-xs'
+                : 'bg-[#EEF2F9] text-[#0d2b6b] hover:bg-blue-100'
+            }"
+          >
+            Comp. ${i}
+          </button>
+        `;
+      }
+
+      // Filas de la tabla
+      let rowsHTML = '';
+      if (filteredRows.length === 0) {
+        rowsHTML = `
+          <tr>
+            <td colspan="4" class="py-12 px-6 text-center">
+              <div class="max-w-md mx-auto space-y-2">
+                <p class="text-base font-bold text-[#0d2b6b]">No se encontraron resultados en ${area.title}</p>
+                <p class="text-xs text-slate-500">Intenta con otro término o código numérico, o selecciona "Todas" en los filtros.</p>
+                <button onclick="clearSearch(); setQuickFilter('${areaKey}', 'all')" class="mt-2 inline-block bg-[#0d2b6b] text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-[#133884] cursor-pointer">
+                  Restablecer filtros
+                </button>
+              </div>
+            </td>
+          </tr>
+        `;
+      } else {
+        filteredRows.forEach(row => {
+          const compHighlighted = highlightText(row.competencia, searchQuery);
+
+          // Columna INDICADOR DE LOGRO (1.1., 1.2., 1.3., etc.)
+          const indicadoresHTML = row.grupos
+            .map(grupo => {
+              const indHighlighted = highlightText(grupo.indicador, searchQuery);
+              return `
+                <div class="border-l-[3px] border-[#0d2b6b] pl-3 py-1 text-[13.5px] font-medium text-slate-800 leading-relaxed">
+                  ${indHighlighted}
+                </div>
+              `;
+            })
+            .join('<div class="h-3.5"></div>');
+
+          // Columna CONTENIDO organizada jerárquicamente por sub-bloque de indicador (1.1.x, 1.2.x, 1.3.x)
+          const gruposContenidosHTML = row.grupos
+            .map((grupo, gIdx) => {
+              const itemsHTML = grupo.contenidos
+                .map((cont, cIdx) => {
+                  const itemKey = `${areaKey}-c${row.no}-g${gIdx}-i${cIdx}`;
+                  const isDone = !!completedItems[itemKey];
+                  const contFormatted = formatHierarchicalItem(cont, searchQuery);
+
+                  return `
+                    <li
+                      class="group flex items-start gap-2.5 py-1 px-1.5 -mx-1.5 rounded-lg hover:bg-blue-50/90 transition ${
+                        isDone ? 'opacity-75' : ''
+                      }"
+                    >
+                      <button
+                        type="button"
+                        onclick="toggleItemQuick(event, '${itemKey}')"
+                        title="${isDone ? 'Desmarcar visto en clase' : 'Marcar como visto en clase'}"
+                        class="mt-[4px] w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center transition cursor-pointer ${
+                          isDone
+                            ? 'bg-emerald-600 border-emerald-600 text-white'
+                            : 'border-slate-300 bg-white group-hover:border-[#133884]'
+                        }"
+                      >
+                        ${
+                          isDone
+                            ? '<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+                            : '<span class="w-1.5 h-1.5 rounded-full bg-[#133884]"></span>'
+                        }
+                      </button>
+                      <span
+                        onclick="openItemModalByKey('${itemKey}')"
+                        title="Haz clic para proyectar en Modo Pizarra"
+                        class="flex-1 text-[13.5px] leading-relaxed text-slate-700 group-hover:text-[#0d2b6b] cursor-pointer ${
+                          isDone ? 'line-through decoration-emerald-600/60' : ''
+                        }"
+                      >
+                        ${contFormatted}
+                      </span>
+                      ${
+                        isDone
+                          ? `<span onclick="openItemModalByKey('${itemKey}')" class="ml-auto text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded flex-shrink-0 cursor-pointer">Visto</span>`
+                          : ''
+                      }
+                    </li>
+                  `;
+                })
+                .join('');
+
+              return `
+                <div class="bg-[#FAFBFD] border border-slate-200/80 border-l-4 border-l-[#0d2b6b] rounded-lg p-3">
+                  <div class="flex items-center gap-2 mb-1.5 pb-1 border-b border-slate-200/70">
+                    <span class="bg-[#0d2b6b] text-[#facc15] text-[10.5px] font-black px-2 py-0.5 rounded">
+                      Bloque ${grupo.codigo}
+                    </span>
+                    <span class="text-[11px] font-semibold text-slate-500 truncate" title="${grupo.indicador}">
+                      ${grupo.indicador.replace(/^\d+\.\d+\.\s*/, '')}
+                    </span>
+                  </div>
+                  <ul class="space-y-0.5">
+                    ${itemsHTML}
+                  </ul>
+                </div>
+              `;
+            })
+            .join('');
+
+          rowsHTML += `
+            <tr class="border-b border-slate-200/80 last:border-b-0 hover:bg-slate-50/50 transition-colors align-top">
+              <!-- Columna NO. -->
+              <td class="py-5 px-4 text-center w-20">
+                <div class="w-9 h-9 mx-auto rounded-lg bg-[#0d2b6b] text-[#facc15] font-black italic text-sm flex items-center justify-center shadow-xs">
+                  ${row.no}
+                </div>
+              </td>
+
+              <!-- Columna COMPETENCIA -->
+              <td class="py-5 px-4 w-full md:w-[22%]">
+                <div class="bg-[#FAFBFD] border border-slate-200/80 border-l-4 border-l-[#0d2b6b] rounded-lg p-3.5 shadow-2xs">
+                  <p class="text-[13.5px] font-bold text-[#0d2b6b] leading-relaxed">
+                    ${compHighlighted}
+                  </p>
+                </div>
+              </td>
+
+              <!-- Columna INDICADOR DE LOGRO -->
+              <td class="py-5 px-4 w-full md:w-[25%]">
+                <div class="space-y-2 pt-1">
+                  ${indicadoresHTML}
+                </div>
+              </td>
+
+              <!-- Columna CONTENIDO -->
+              <td class="py-5 px-4 w-full md:w-[45%]">
+                <div class="bg-white border border-slate-200/90 rounded-xl p-3.5 shadow-2xs space-y-3">
+                  ${gruposContenidosHTML}
+                </div>
+              </td>
+            </tr>
+          `;
+        });
+      }
+
+      return `
+        <section class="curriculum-card fade-in bg-white rounded-2xl shadow-sm border border-slate-200/90 border-l-[6px] border-l-[#0d2b6b] overflow-hidden">
+          <!-- Cabecera de la Tarjeta -->
+          <div class="px-5 sm:px-7 pt-6 pb-5 border-b border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div>
+              <span class="inline-block bg-[#E8EFFD] text-[#133884] text-[10.5px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md mb-2">
+                ${area.badge}
+              </span>
+              <h2 class="text-xl sm:text-2xl font-black italic text-[#0d2b6b] tracking-tight uppercase">
+                ${area.title}
+              </h2>
+              <p class="text-xs sm:text-[13px] text-slate-600 mt-1 font-medium">
+                Nivel: <strong class="text-[#0d2b6b] font-bold">Tercero Básico</strong>
+                <span class="mx-1.5 text-slate-400">·</span>
+                Maestra: <strong class="text-[#0d2b6b] font-bold">Rebeca Sian</strong>
+                <span class="mx-1.5 text-slate-400">·</span>
+                Competencias: <strong class="text-[#133884] font-bold">${area.blocksLabel}</strong>
+              </p>
+            </div>
+
+            <!-- Píldoras de Filtro Rápido -->
+            <div class="no-print flex flex-wrap items-center gap-1.5">
+              ${quickFilterButtonsHTML}
+            </div>
+          </div>
+
+          <!-- Tabla Curricular -->
+          <div class="p-4 sm:p-6 overflow-x-auto">
+            <table class="w-full min-w-[780px] border-collapse text-left rounded-xl overflow-hidden">
+              <thead>
+                <tr class="bg-[#0d2b6b] text-[#facc15]">
+                  <th class="py-3.5 px-4 text-center text-xs font-extrabold italic uppercase tracking-wider rounded-tl-xl w-20">
+                    NO.
+                  </th>
+                  <th class="py-3.5 px-4 text-xs font-extrabold italic uppercase tracking-wider">
+                    COMPETENCIA
+                  </th>
+                  <th class="py-3.5 px-4 text-xs font-extrabold italic uppercase tracking-wider">
+                    INDICADOR DE LOGRO
+                  </th>
+                  <th class="py-3.5 px-4 text-xs font-extrabold italic uppercase tracking-wider rounded-tr-xl">
+                    CONTENIDO
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200/80 bg-white">
+                ${rowsHTML}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderBoard() {
+      const main = document.getElementById('mainContainer');
+      if (activeTab === 'danza') {
+        main.innerHTML = renderAreaCard('danza');
+      } else if (activeTab === 'teatro') {
+        main.innerHTML = renderAreaCard('teatro');
+      } else {
+        main.innerHTML = renderAreaCard('danza') + renderAreaCard('teatro');
+      }
+      updateProgressCounter();
+    }
+
+    // =========================================================================
+    // MODAL DE PROYECCIÓN EN PIZARRA Y PROGRESO DOCENTE
+    // =========================================================================
+    function buildModalSequence() {
+      const areas = activeTab === 'completa' ? ['danza', 'teatro'] : [activeTab];
+      const seq = [];
+      areas.forEach(areaKey => {
+        const area = curriculumData[areaKey];
+        const currentFilter =
+          activeTab === 'completa'
+            ? selectedCompCompleta
+            : areaKey === 'danza'
+            ? selectedCompDanza
+            : selectedCompTeatro;
+
+        area.rows.forEach(row => {
+          const matchesComp = currentFilter === 'all' || String(row.no) === String(currentFilter);
+          const matchesText = rowMatchesSearch(row, searchQuery);
+          if (matchesComp && matchesText) {
+            row.grupos.forEach((grupo, gIdx) => {
+              grupo.contenidos.forEach((cont, cIdx) => {
+                seq.push({
+                  itemKey: `${areaKey}-c${row.no}-g${gIdx}-i${cIdx}`,
+                  areaName: areaKey === 'danza' ? 'DANZA' : 'TEATRO',
+                  compNo: row.no,
+                  groupCode: grupo.codigo,
+                  contentText: cont,
+                  compText: row.competencia,
+                  indicatorText: grupo.indicador
+                });
+              });
+            });
+          }
+        });
+      });
+      return seq;
+    }
+
+    function updateModalProgressButton(isDone) {
+      const btn = document.getElementById('modalProgressBtn');
+      const icon = document.getElementById('modalProgressIcon');
+      const label = document.getElementById('modalProgressLabel');
+
+      if (isDone) {
+        btn.className = 'inline-flex items-center gap-2 cursor-pointer select-none px-4 py-2 rounded-lg border font-bold text-xs sm:text-sm transition bg-emerald-600 text-white border-emerald-700 shadow-xs';
+        icon.className = 'w-4 h-4 rounded bg-white text-emerald-700 flex items-center justify-center';
+        icon.innerHTML = '<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        label.textContent = 'Visto en clase';
+      } else {
+        btn.className = 'inline-flex items-center gap-2 cursor-pointer select-none px-4 py-2 rounded-lg border font-bold text-xs sm:text-sm transition bg-blue-50 hover:bg-blue-100 text-[#0d2b6b] border-blue-200';
+        icon.className = 'w-4 h-4 rounded border border-[#0d2b6b] bg-white flex items-center justify-center';
+        icon.innerHTML = '';
+        label.textContent = 'Marcar como visto en clase';
+      }
+    }
+
+    function renderModalItem(item) {
+      currentModalItemKey = item.itemKey;
+      document.getElementById('modalAreaBadge').textContent = `ÁREA DE ${item.areaName}`;
+      document.getElementById('modalCompBadge').textContent = `COMPETENCIA ${item.compNo} · BLOQUE ${item.groupCode}`;
+      document.getElementById('modalStepBadge').textContent = `${currentModalIndex + 1} / ${currentModalSequence.length}`;
+      document.getElementById('modalContentText').textContent = item.contentText;
+      document.getElementById('modalCompetencyText').textContent = item.compText;
+      document.getElementById('modalIndicatorText').textContent = item.indicatorText;
+
+      updateModalProgressButton(!!completedItems[item.itemKey]);
+      document.getElementById('modalPrevBtn').disabled = currentModalIndex <= 0;
+      document.getElementById('modalNextBtn').disabled = currentModalIndex >= currentModalSequence.length - 1;
+    }
+
+    function openItemModalByKey(itemKey) {
+      currentModalSequence = buildModalSequence();
+      currentModalIndex = currentModalSequence.findIndex(entry => entry.itemKey === itemKey);
+      if (currentModalIndex === -1) return;
+
+      renderModalItem(currentModalSequence[currentModalIndex]);
+
+      const modal = document.getElementById('detailModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function navigateModal(delta) {
+      const nextIdx = currentModalIndex + delta;
+      if (nextIdx >= 0 && nextIdx < currentModalSequence.length) {
+        currentModalIndex = nextIdx;
+        renderModalItem(currentModalSequence[currentModalIndex]);
+      }
+    }
+
+    function hideModal() {
+      const modal = document.getElementById('detailModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      currentModalItemKey = null;
+    }
+
+    function closeModal(event) {
+      if (event.target.id === 'detailModal') {
+        hideModal();
+      }
+    }
+
+    function toggleItemQuick(event, itemKey) {
+      event.stopPropagation();
+      if (completedItems[itemKey]) {
+        delete completedItems[itemKey];
+      } else {
+        completedItems[itemKey] = true;
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completedItems));
+      renderBoard();
+    }
+
+    function toggleItemProgressFromModal() {
+      if (!currentModalItemKey) return;
+      if (completedItems[currentModalItemKey]) {
+        delete completedItems[currentModalItemKey];
+      } else {
+        completedItems[currentModalItemKey] = true;
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completedItems));
+      updateModalProgressButton(!!completedItems[currentModalItemKey]);
+      renderBoard();
+    }
+
+    function updateProgressCounter() {
+      const countAreaItems = (area) =>
+        area.rows.reduce(
+          (acc, r) => acc + r.grupos.reduce((gAcc, g) => gAcc + g.contenidos.length, 0),
+          0
+        );
+      const totalItems = countAreaItems(curriculumData.danza) + countAreaItems(curriculumData.teatro);
+      const doneCount = Object.keys(completedItems).length;
+      const pct = totalItems > 0 ? Math.round((doneCount / totalItems) * 100) : 0;
+
+      const summaryEl = document.getElementById('progressSummary');
+      const barEl = document.getElementById('progressBarFill');
+      if (summaryEl) {
+        summaryEl.textContent = `Contenidos vistos en clase: ${doneCount} / ${totalItems} (${pct}%)`;
+      }
+      if (barEl) {
+        barEl.style.width = `${pct}%`;
+      }
+    }
+
+    function resetProgress() {
+      completedItems = {};
+      localStorage.removeItem(STORAGE_KEY);
+      if (currentModalItemKey) {
+        updateModalProgressButton(false);
+      }
+      renderBoard();
+    }
+
+    // =========================================================================
+    // PANTALLA COMPLETA (FULLSCREEN API) Y ATAJOS DE TECLADO
+    // =========================================================================
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      const fsText = document.getElementById('fsText');
+      if (document.fullscreenElement) {
+        fsText.textContent = 'Salir Pantalla Completa';
+      } else {
+        fsText.textContent = 'Pantalla Completa';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('detailModal');
+      const isModalOpen = modal && !modal.classList.contains('hidden');
+      if (e.key === 'Escape' && isModalOpen) {
+        hideModal();
+      } else if (isModalOpen && e.key === 'ArrowRight') {
+        navigateModal(1);
+      } else if (isModalOpen && e.key === 'ArrowLeft') {
+        navigateModal(-1);
+      }
+    });
+
+    // Inicialización al cargar la página
+    window.addEventListener('DOMContentLoaded', () => {
+      updateTabButtons();
+      updateDropdownOptions();
+      renderBoard();
+    });
+  </script>
+</body>
+</html>
